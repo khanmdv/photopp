@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Assets" representedClassName="Assets" syncable="YES">
+        <attribute name="assetURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="locLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="locLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="photoId" attributeType="String" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="resolved" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="type" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tags" inverseName="assets" inverseEntity="Tags" spotlightIndexingEnabled="YES" syncable="YES"/>
+    </entity>
+    <entity name="Tags" representedClassName="Tags" syncable="YES">
+        <attribute name="permanent" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="private" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="tagColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tagDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tagDisplayOrder" optional="YES" attributeType="Integer 16" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <attribute name="tagId" attributeType="String" syncable="YES"/>
+        <attribute name="tagName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="assets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Assets" inverseName="tags" inverseEntity="Assets" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Assets" positionX="-45" positionY="0" width="128" height="195"/>
+        <element name="Tags" positionX="189" positionY="155" width="128" height="165"/>
+    </elements>
+</model>
