@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 XYZ. All rights reserved.
 //
 
-#import "Assets.h"
+#import "PSPPhoto.h"
 #import <Foundation/Foundation.h>
 
 @interface PPAsset : NSObject
@@ -15,7 +15,7 @@
 @property (nonatomic, strong, readonly) NSString *assetURL;
 @property (nonatomic, assign, readonly) NSInteger assetRank;
 
-- (instancetype)initWithAsset:(Assets *)asset;
+- (instancetype)initWithAsset:(PSPPhoto *)asset;
 
 - (void)incrementAssetRank;
 

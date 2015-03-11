@@ -9,8 +9,8 @@
 #import "PPUtil.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <UIKit/UIKit.h>
-#import "PPPhotosManager.h"
-#import "Assets.h"
+#import "PSPPhotosManager.h"
+#import "PSPPhoto.h"
 #import <Photos/PHAsset.h>
 #import <Photos/PHFetchOptions.h>
 #import <Photos/PHFetchResult.h>
@@ -42,7 +42,7 @@
 
     for (int i = 0; i < photos.count; i++) {
         PHAsset *photo = [photos objectAtIndex:i];
-        Assets *asset = [[PPPhotosManager sharedManager] emptyAssetObject];
+        PSPPhoto *asset = [[PSPPhotosManager sharedManager] emptyAssetObject];
 
         asset.photoId = photo.localIdentifier;
         asset.width = @(photo.pixelWidth);
@@ -57,7 +57,7 @@
         [arr addObject:asset];
     }
 
-    [[PPPhotosManager sharedManager] saveAll];
+    [[PSPPhotosManager sharedManager] saveAll];
     [arr removeAllObjects];
 
     /*
@@ -116,7 +116,7 @@
     for (NSString *tagName in
          @[ @"Travel", @"Important", @"Favorites", @"Family", @"Selfies", @"Work", @"Pets" ]) {
 
-        Tags *tag = [[PPPhotosManager sharedManager] emptyTagObject];
+        PSPTag *tag = [[PSPPhotosManager sharedManager] emptyTagObject];
 
         tag.tagId = [[NSUUID UUID] UUIDString];
         tag.tagName = tagName;
@@ -127,7 +127,7 @@
         [arr addObject:tag];
     }
 
-    [[PPPhotosManager sharedManager] saveAll];
+    [[PSPPhotosManager sharedManager] saveAll];
     [arr removeAllObjects];
 }
 

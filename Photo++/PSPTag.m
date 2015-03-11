@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 XYZ. All rights reserved.
 //
 
-#import "Tags.h"
-#import "Assets.h"
+#import "PSPTag.h"
+#import "PSPPhoto.h"
 
 
-@implementation Tags
+@implementation PSPTag
 
 @dynamic private;
 @dynamic tagColor;

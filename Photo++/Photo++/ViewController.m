@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "PPPhotosManager.h"
+#import "PSPPhotosManager.h"
 #import "TagPhotosViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "TagCellTableViewCell.h"
@@ -27,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    self.tags = [[PPPhotosManager sharedManager] fetchAllTags];
+    self.tags = [[PSPPhotosManager sharedManager] fetchAllTags];
 }
 
 - (void)didReceiveMemoryWarning

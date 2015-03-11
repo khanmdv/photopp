@@ -7,26 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Assets.h"
-#import "Tags.h"
+#import "PSPPhoto.h"
+#import "PSPTag.h"
 #import "PPAsset.h"
 #import "PPTag.h"
 
 #import <CoreData/CoreData.h>
 
-@interface PPPhotosManager : NSObject
+@interface PSPPhotosManager : NSObject
 
-+ (PPPhotosManager *)sharedManager;
++ (PSPPhotosManager *)sharedManager;
 
 - (NSArray *)fetchAllPhotos;
 - (NSArray *)fetchAllTags;
 
-- (Assets *)photoWithId:(NSString *)photoId;
-- (Tags *)tagWithId:(NSString *)tagName;
+- (PSPPhoto *)photoWithId:(NSString *)photoId;
+- (PSPTag *)tagWithId:(NSString *)tagName;
 - (NSArray *)photosOfTag:(NSString *)tagName;
 
-- (Assets *)emptyAssetObject;
-- (Tags *)emptyTagObject;
+- (PSPPhoto *)emptyAssetObject;
+- (PSPTag *)emptyTagObject;
 
 - (NSArray *)fetchAllPHAssets;
 

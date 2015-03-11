@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Assets;
+@class PSPPhoto;
 
-@interface Tags : NSManagedObject
+@interface PSPTag : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * private;
 @property (nonatomic, retain) NSString * tagColor;
@@ -23,10 +23,10 @@
 @property (nonatomic, retain) NSSet *assets;
 @end
 
-@interface Tags (CoreDataGeneratedAccessors)
+@interface PSPTag (CoreDataGeneratedAccessors)
 
-- (void)addAssetsObject:(Assets *)value;
-- (void)removeAssetsObject:(Assets *)value;
+- (void)addAssetsObject:(PSPPhoto *)value;
+- (void)removeAssetsObject:(PSPPhoto *)value;
 - (void)addAssets:(NSSet *)values;
 - (void)removeAssets:(NSSet *)values;
 

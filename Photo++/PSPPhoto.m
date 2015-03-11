@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 XYZ. All rights reserved.
 //
 
-#import "Assets.h"
-#import "Tags.h"
+#import "PSPPhoto.h"
+#import "PSPTag.h"
 
-@implementation Assets
+@implementation PSPPhoto
 
 @dynamic photoId;
 @dynamic rank;

@@ -23,8 +23,8 @@
 		E731F2C51A72221200D4F9F7 /* Close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E731F2C11A72221200D4F9F7 /* Close@2x.png */; };
 		E7423A451A9AC52000ABF215 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7016F071A6A59D000F1FF1E /* Images.xcassets */; };
 		E7423A461A9AD12500ABF215 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79145CA1A6F489400ECFFC2 /* Photos.framework */; };
-		E74C7E731A78B1C70049431F /* PPPhotosManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E74C7E721A78B1C70049431F /* PPPhotosManager.m */; };
-		E74C7E741A78B1C70049431F /* PPPhotosManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E74C7E721A78B1C70049431F /* PPPhotosManager.m */; };
+		E74C7E731A78B1C70049431F /* PSPPhotosManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E74C7E721A78B1C70049431F /* PSPPhotosManager.m */; };
+		E74C7E741A78B1C70049431F /* PSPPhotosManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E74C7E721A78B1C70049431F /* PSPPhotosManager.m */; };
 		E74C7E781A78B36A0049431F /* PPAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = E74C7E771A78B36A0049431F /* PPAsset.m */; };
 		E74C7E791A78B36A0049431F /* PPAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = E74C7E771A78B36A0049431F /* PPAsset.m */; };
 		E74C7E7D1A78B53B0049431F /* PPTag.m in Sources */ = {isa = PBXBuildFile; fileRef = E74C7E7C1A78B53B0049431F /* PPTag.m */; };
@@ -42,10 +42,10 @@
 		E799F67C1A733F0500145F96 /* PPTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E799F67B1A733F0500145F96 /* PPTagButton.m */; };
 		E799F67D1A733F0500145F96 /* PPTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E799F67B1A733F0500145F96 /* PPTagButton.m */; };
 		E7AF1FEC1A87731C000DB3A5 /* PPUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E7016F221A6A5E1800F1FF1E /* PPUtil.m */; };
-		E7F7021D1AA8407900AAA11F /* Tags.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F7021C1AA8407900AAA11F /* Tags.m */; };
-		E7F7021E1AA8407900AAA11F /* Tags.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F7021C1AA8407900AAA11F /* Tags.m */; };
-		E7F702211AA8407A00AAA11F /* Assets.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F702201AA8407A00AAA11F /* Assets.m */; };
-		E7F702221AA8407A00AAA11F /* Assets.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F702201AA8407A00AAA11F /* Assets.m */; };
+		E7F7021D1AA8407900AAA11F /* PSPTag.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F7021C1AA8407900AAA11F /* PSPTag.m */; };
+		E7F7021E1AA8407900AAA11F /* PSPTag.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F7021C1AA8407900AAA11F /* PSPTag.m */; };
+		E7F702211AA8407A00AAA11F /* PSPPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F702201AA8407A00AAA11F /* PSPPhoto.m */; };
+		E7F702221AA8407A00AAA11F /* PSPPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F702201AA8407A00AAA11F /* PSPPhoto.m */; };
 		E7F702241AA8444900AAA11F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F702231AA8444900AAA11F /* CoreLocation.framework */; };
 		E7F702271AA9A45B00AAA11F /* PPHelpViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F702261AA9A45B00AAA11F /* PPHelpViewViewController.m */; };
 		E7F7022A1AA9A4CF00AAA11F /* vid.MOV in Resources */ = {isa = PBXBuildFile; fileRef = E7F702291AA9A4CF00AAA11F /* vid.MOV */; };
@@ -108,8 +108,8 @@
 		E731F2C11A72221200D4F9F7 /* Close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Close@2x.png"; sourceTree = "<group>"; };
 		E7423A411A9AAB3800ABF215 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		E7423A431A9AAB4200ABF215 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		E74C7E711A78B1C70049431F /* PPPhotosManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPhotosManager.h; sourceTree = "<group>"; };
-		E74C7E721A78B1C70049431F /* PPPhotosManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPhotosManager.m; sourceTree = "<group>"; };
+		E74C7E711A78B1C70049431F /* PSPPhotosManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPPhotosManager.h; sourceTree = "<group>"; };
+		E74C7E721A78B1C70049431F /* PSPPhotosManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPPhotosManager.m; sourceTree = "<group>"; };
 		E74C7E761A78B36A0049431F /* PPAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPAsset.h; sourceTree = "<group>"; };
 		E74C7E771A78B36A0049431F /* PPAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPAsset.m; sourceTree = "<group>"; };
 		E74C7E7B1A78B53B0049431F /* PPTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTag.h; sourceTree = "<group>"; };
@@ -133,10 +133,10 @@
 		E799F67A1A733F0500145F96 /* PPTagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTagButton.h; sourceTree = "<group>"; };
 		E799F67B1A733F0500145F96 /* PPTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTagButton.m; sourceTree = "<group>"; };
 		E7BAF7D61A7B61A000C2C8E4 /* Photos+.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Photos+.entitlements"; sourceTree = "<group>"; };
-		E7F7021B1AA8407900AAA11F /* Tags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tags.h; path = ../Tags.h; sourceTree = "<group>"; };
-		E7F7021C1AA8407900AAA11F /* Tags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tags.m; path = ../Tags.m; sourceTree = "<group>"; };
-		E7F7021F1AA8407A00AAA11F /* Assets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assets.h; path = ../Assets.h; sourceTree = "<group>"; };
-		E7F702201AA8407A00AAA11F /* Assets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Assets.m; path = ../Assets.m; sourceTree = "<group>"; };
+		E7F7021B1AA8407900AAA11F /* PSPTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSPTag.h; path = ../PSPTag.h; sourceTree = "<group>"; };
+		E7F7021C1AA8407900AAA11F /* PSPTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSPTag.m; path = ../PSPTag.m; sourceTree = "<group>"; };
+		E7F7021F1AA8407A00AAA11F /* PSPPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSPPhoto.h; path = ../PSPPhoto.h; sourceTree = "<group>"; };
+		E7F702201AA8407A00AAA11F /* PSPPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSPPhoto.m; path = ../PSPPhoto.m; sourceTree = "<group>"; };
 		E7F702231AA8444900AAA11F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E7F702251AA9A45B00AAA11F /* PPHelpViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPHelpViewViewController.h; sourceTree = "<group>"; };
 		E7F702261AA9A45B00AAA11F /* PPHelpViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPHelpViewViewController.m; sourceTree = "<group>"; };
@@ -266,12 +266,12 @@
 		E74C7E701A78B19C0049431F /* DBManagement */ = {
 			isa = PBXGroup;
 			children = (
-				E7F7021F1AA8407A00AAA11F /* Assets.h */,
-				E7F702201AA8407A00AAA11F /* Assets.m */,
-				E7F7021B1AA8407900AAA11F /* Tags.h */,
-				E7F7021C1AA8407900AAA11F /* Tags.m */,
-				E74C7E711A78B1C70049431F /* PPPhotosManager.h */,
-				E74C7E721A78B1C70049431F /* PPPhotosManager.m */,
+				E7F7021F1AA8407A00AAA11F /* PSPPhoto.h */,
+				E7F702201AA8407A00AAA11F /* PSPPhoto.m */,
+				E7F7021B1AA8407900AAA11F /* PSPTag.h */,
+				E7F7021C1AA8407900AAA11F /* PSPTag.m */,
+				E74C7E711A78B1C70049431F /* PSPPhotosManager.h */,
+				E74C7E721A78B1C70049431F /* PSPPhotosManager.m */,
 			);
 			name = DBManagement;
 			sourceTree = "<group>";
@@ -537,15 +537,15 @@
 				E7016F231A6A5E1800F1FF1E /* PPUtil.m in Sources */,
 				E7F7023B1AAC4D1F00AAA11F /* TagCellTableViewCell.m in Sources */,
 				E7016EFD1A6A59D000F1FF1E /* AppDelegate.m in Sources */,
-				E7F702211AA8407A00AAA11F /* Assets.m in Sources */,
+				E7F702211AA8407A00AAA11F /* PSPPhoto.m in Sources */,
 				E74C7E781A78B36A0049431F /* PPAsset.m in Sources */,
-				E74C7E731A78B1C70049431F /* PPPhotosManager.m in Sources */,
+				E74C7E731A78B1C70049431F /* PSPPhotosManager.m in Sources */,
 				E7016EFA1A6A59D000F1FF1E /* main.m in Sources */,
 				E7F702271AA9A45B00AAA11F /* PPHelpViewViewController.m in Sources */,
 				E74C7E7D1A78B53B0049431F /* PPTag.m in Sources */,
 				E756B4971A89E52A00C64BA9 /* TagPhotosViewController.m in Sources */,
 				E79815991A91C37A002BFCBA /* PhotoDetailViewController.m in Sources */,
-				E7F7021D1AA8407900AAA11F /* Tags.m in Sources */,
+				E7F7021D1AA8407900AAA11F /* PSPTag.m in Sources */,
 				E7016F031A6A59D000F1FF1E /* ViewController.m in Sources */,
 				E799F67C1A733F0500145F96 /* PPTagButton.m in Sources */,
 				E7016F001A6A59D000F1FF1E /* Photos_.xcdatamodeld in Sources */,
@@ -564,10 +564,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7F7021E1AA8407900AAA11F /* Tags.m in Sources */,
-				E74C7E741A78B1C70049431F /* PPPhotosManager.m in Sources */,
+				E7F7021E1AA8407900AAA11F /* PSPTag.m in Sources */,
+				E74C7E741A78B1C70049431F /* PSPPhotosManager.m in Sources */,
 				E7AF1FEC1A87731C000DB3A5 /* PPUtil.m in Sources */,
-				E7F702221AA8407A00AAA11F /* Assets.m in Sources */,
+				E7F702221AA8407A00AAA11F /* PSPPhoto.m in Sources */,
 				E799F67D1A733F0500145F96 /* PPTagButton.m in Sources */,
 				E791460B1A6F49CA00ECFFC2 /* ActionViewController.m in Sources */,
 				E74C7E791A78B36A0049431F /* PPAsset.m in Sources */,

@@ -10,7 +10,7 @@
 
 @interface PPAsset ()
 
-@property (nonatomic, strong) Assets *asset;
+@property (nonatomic, strong) PSPPhoto *asset;
 
 @end
 
@@ -18,7 +18,7 @@
 
 @dynamic assetId, assetRank, assetURL;
 
-- (instancetype)initWithAsset:(Assets *)asset
+- (instancetype)initWithAsset:(PSPPhoto *)asset
 {
     if (self = [super init]) {
 

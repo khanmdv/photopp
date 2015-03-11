@@ -7,7 +7,7 @@
 //
 
 #import "TagPhotosViewController.h"
-#import "PPPhotosManager.h"
+#import "PSPPhotosManager.h"
 #import <Photos/PHAsset.h>
 #import <Photos/PHFetchOptions.h>
 #import <Photos/PHFetchResult.h>
@@ -51,7 +51,7 @@ typedef struct {
 
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
 
-      self.photos = [[PPPhotosManager sharedManager] photosOfTag:self.tagName];
+      self.photos = [[PSPPhotosManager sharedManager] photosOfTag:self.tagName];
 
       dispatch_async(dispatch_get_main_queue(), ^{
         [self p_renderPhotos];
@@ -90,7 +90,7 @@ typedef struct {
     cell.tag = indexPath.row;
     CGSize size = cell.frame.size;
 
-    Assets *myasset = (Assets *)self.photos[indexPath.row];
+    PSPPhoto *myasset = (PSPPhoto *)self.photos[indexPath.row];
 
     // dispatch_async(dispatch_get_global_queue(0, 0), ^{
 
@@ -131,7 +131,7 @@ typedef struct {
         = (PhotoDetailViewController *)segue.destinationViewController;
 
     UICollectionViewCell *cell = (UICollectionViewCell *)sender;
-    Assets *myasset = (Assets *)self.photos[cell.tag];
+    PSPPhoto *myasset = (PSPPhoto *)self.photos[cell.tag];
     photoVC.photoURL = myasset.photoId;
 }
 

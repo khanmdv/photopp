@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 XYZ. All rights reserved.
 //
 
-#import "PPPhotosManager.h"
+#import "PSPPhotosManager.h"
 #import <Photos/PHAsset.h>
 #import <Photos/PHFetchOptions.h>
 #import <Photos/PHFetchResult.h>
@@ -17,7 +17,7 @@
 #define kPPTagsEntity @"Tags"
 #define kPPAssetsTagsEntity @"AssetsTags"
 
-@interface PPPhotosManager ()
+@interface PSPPhotosManager ()
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
@@ -30,15 +30,15 @@
 
 @end
 
-@implementation PPPhotosManager
+@implementation PSPPhotosManager
 
-+ (PPPhotosManager *)sharedManager
++ (PSPPhotosManager *)sharedManager
 {
-    static PPPhotosManager *photosManager;
+    static PSPPhotosManager *photosManager;
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-      photosManager = [[PPPhotosManager alloc] init];
+      photosManager = [[PSPPhotosManager alloc] init];
     });
 
     return photosManager;
@@ -105,7 +105,7 @@
 {
     __block NSArray *photos;
 
-    Tags *tag = [self tagWithId:tagName];
+    PSPTag *tag = [self tagWithId:tagName];
 
     dispatch_sync(self.queue, ^{
 
@@ -121,27 +121,27 @@
     return photos;
 }
 
-- (Tags *)emptyTagObject
+- (PSPTag *)emptyTagObject
 {
-    Tags *tag
-        = (Tags *)[NSEntityDescription insertNewObjectForEntityForName:kPPTagsEntity
+    PSPTag *tag
+        = (PSPTag *)[NSEntityDescription insertNewObjectForEntityForName:kPPTagsEntity
                                                 inManagedObjectContext:self.managedObjectContext];
 
     return tag;
 }
 
-- (Assets *)emptyAssetObject
+- (PSPPhoto *)emptyAssetObject
 {
-    Assets *asset
-        = (Assets *)[NSEntityDescription insertNewObjectForEntityForName:kPPAssetsEntity
+    PSPPhoto *asset
+        = (PSPPhoto *)[NSEntityDescription insertNewObjectForEntityForName:kPPAssetsEntity
                                                   inManagedObjectContext:self.managedObjectContext];
 
     return asset;
 }
 
-- (Assets *)photoWithId:(NSString *)photoId
+- (PSPPhoto *)photoWithId:(NSString *)photoId
 {
-    __block Assets *asset;
+    __block PSPPhoto *asset;
 
     dispatch_sync(self.queue, ^{
       NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:kPPAssetsEntity];
@@ -160,9 +160,9 @@
     return asset;
 }
 
-- (Tags *)tagWithId:(NSString *)tagName
+- (PSPTag *)tagWithId:(NSString *)tagName
 {
-    __block Tags *tag;
+    __block PSPTag *tag;
 
     dispatch_sync(self.queue, ^{
       NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:kPPTagsEntity];
@@ -339,7 +339,7 @@
     }
 
     NSMutableDictionary *map = [NSMutableDictionary dictionary];
-    for (Assets *asset in results) {
+    for (PSPPhoto *asset in results) {
 
         map[asset.photoId] = asset;
     }
@@ -368,7 +368,7 @@
                                        NSURL *url = (NSURL *)
                                            [alAsset valueForProperty:ALAssetPropertyAssetURL];
 
-                                       Assets *asst = map[fileName];
+                                       PSPPhoto *asst = map[fileName];
 
                                        if (asst) {
                                            asst.assetURL = url.absoluteString;

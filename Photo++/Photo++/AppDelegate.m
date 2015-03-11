@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PPUtil.h"
-#import "PPPhotosManager.h"
+#import "PSPPhotosManager.h"
 
 @interface AppDelegate ()
 
@@ -33,26 +33,26 @@
         [alert show];
     }
 
-    NSArray *assets = [[PPPhotosManager sharedManager] fetchAllPhotos];
+    NSArray *assets = [[PSPPhotosManager sharedManager] fetchAllPhotos];
 
     if (assets.count == 0) {
 
         [PPUtil createPhotosIndex];
-        assets = [[PPPhotosManager sharedManager] fetchAllPhotos];
+        assets = [[PSPPhotosManager sharedManager] fetchAllPhotos];
     }
 
     NSLog(@"Photos = %@", assets);
 
-    NSArray *tags = [[PPPhotosManager sharedManager] fetchAllTags];
+    NSArray *tags = [[PSPPhotosManager sharedManager] fetchAllTags];
 
     if (tags.count == 0) {
         //[PPUtil createDefaultTags];
-        tags = [[PPPhotosManager sharedManager] fetchAllTags];
+        tags = [[PSPPhotosManager sharedManager] fetchAllTags];
     }
 
     NSLog(@"Tags = %@", tags);
 
-    [[PPPhotosManager sharedManager] resolvePhotos];
+    [[PSPPhotosManager sharedManager] resolvePhotos];
 
     return YES;
 }
@@ -78,7 +78,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-      [[PPPhotosManager sharedManager] resolvePhotos];
+      [[PSPPhotosManager sharedManager] resolvePhotos];
     });
 }
 
@@ -93,7 +93,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also
     // applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    [[PPPhotosManager sharedManager] saveAll];
+    [[PSPPhotosManager sharedManager] saveAll];
 }
 
 @end

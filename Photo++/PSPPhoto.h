@@ -14,9 +14,9 @@ typedef NS_ENUM(NSUInteger, PPPhotoMediaType) {
     PPPhotoMediaTypeVideo = 1
 };
 
-@class Tags;
+@class PSPTag;
 
-@interface Assets : NSManagedObject
+@interface PSPPhoto : NSManagedObject
 
 @property (nonatomic, retain) NSString *photoId;
 @property (nonatomic, retain) NSNumber *rank;
@@ -30,10 +30,10 @@ typedef NS_ENUM(NSUInteger, PPPhotoMediaType) {
 @property (nonatomic, retain) NSSet *tags;
 @end
 
-@interface Assets (CoreDataGeneratedAccessors)
+@interface PSPPhoto (CoreDataGeneratedAccessors)
 
-- (void)addTagsObject:(Tags *)value;
-- (void)removeTagsObject:(Tags *)value;
+- (void)addTagsObject:(PSPTag *)value;
+- (void)removeTagsObject:(PSPTag *)value;
 - (void)addTags:(NSSet *)values;
 - (void)removeTags:(NSSet *)values;
 

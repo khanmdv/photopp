@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Tags.h"
+#import "PSPTag.h"
 
 @interface PPTag : NSObject
 
@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSString *tagName;
 @property (nonatomic, assign) NSInteger tagDisplayOrder;
 
-- (instancetype)initWithTag:(Tags *)tag;
+- (instancetype)initWithTag:(PSPTag *)tag;
 
 - (void)updateTagName:(NSString *)newName;
 - (void)updateTagdisplayOrder:(NSInteger)tagDisplayOrder;

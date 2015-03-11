@@ -10,7 +10,7 @@
 
 @interface PPTag ()
 
-@property (nonatomic, strong) Tags *tag;
+@property (nonatomic, strong) PSPTag *tag;
 
 @end
 
@@ -18,7 +18,7 @@
 
 @dynamic tagId, tagDisplayOrder, tagName;
 
-- (instancetype)initWithTag:(Tags *)tag
+- (instancetype)initWithTag:(PSPTag *)tag
 {
     if (self = [super init]) {
         _tag = tag;

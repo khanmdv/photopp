@@ -8,7 +8,7 @@
 
 #import "ActionViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-#import "PPPhotosManager.h"
+#import "PSPPhotosManager.h"
 #import "PPTagButton.h"
 #import "PPUtil.h"
 #import <AssetsLibrary/AssetsLibrary.h>
@@ -27,7 +27,7 @@
 @property (nonatomic, strong) NSMutableDictionary *tagsByName;
 @property (nonatomic, strong) NSMutableDictionary *cellStatusByName;
 @property (weak, nonatomic) IBOutlet UITableView *tagsTableView;
-@property (nonatomic, strong) Assets *currentAsset;
+@property (nonatomic, strong) PSPPhoto *currentAsset;
 
 @end
 
@@ -39,9 +39,9 @@
                                                  self.tagsScrollView.frame.size.height * 2);
 }
 
-- (Tags *)p_newTag:(NSString *)tagName forAsset:(Assets *)asset
+- (PSPTag *)p_newTag:(NSString *)tagName forAsset:(PSPPhoto *)asset
 {
-    Tags *tag = [[PPPhotosManager sharedManager] emptyTagObject];
+    PSPTag *tag = [[PSPPhotosManager sharedManager] emptyTagObject];
     tag.tagName = tagName;
     tag.tagId = [[NSUUID UUID] UUIDString];
     tag.tagDisplayOrder = @(1);
@@ -55,7 +55,7 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 
     if (tags.count > 0) {
-        for (Tags *tag in tags) {
+        for (PSPTag *tag in tags) {
 
             dict[tag.tagName] = tag;
         }
@@ -107,13 +107,13 @@
 
                                    if (!selected) {
 
-                                       Tags *tag = self.tagsByName[tagName2];
+                                       PSPTag *tag = self.tagsByName[tagName2];
                                        [self.currentAsset removeTagsObject:tag];
                                        [self.tagsByName removeObjectForKey:tagName2];
                                    }
                                    else {
 
-                                       Tags *tag =
+                                       PSPTag *tag =
                                            [self p_newTag:tagName2 forAsset:self.currentAsset];
                                        self.tagsByName[tagName2] = tag;
                                        [self.currentAsset addTagsObject:tag];
@@ -175,11 +175,11 @@
                                   });
 
                                   self.currentAsset =
-                                      [[PPPhotosManager sharedManager] photoWithId:photoId];
+                                      [[PSPPhotosManager sharedManager] photoWithId:photoId];
 
                                   if (self.currentAsset == nil) {
-                                      Assets *newAsset =
-                                          [[PPPhotosManager sharedManager] emptyAssetObject];
+                                      PSPPhoto *newAsset =
+                                          [[PSPPhotosManager sharedManager] emptyAssetObject];
 
                                       newAsset.photoId = photoId;
                                       newAsset.resolved = @(NO);
@@ -215,7 +215,7 @@
 
 - (IBAction)done
 {
-    [[PPPhotosManager sharedManager] saveAll];
+    [[PSPPhotosManager sharedManager] saveAll];
     // Return any edited content to the host app.
     // This template doesn't do anything, so we just echo the passed in items.
     [self.extensionContext completeRequestReturningItems:self.extensionContext.inputItems
@@ -235,7 +235,7 @@
                                handler:^(UIAlertAction *action) {
 
                                  NSString *tagName = ((UITextField *)alert.textFields[0]).text;
-                                 Tags *t = [self p_newTag:tagName forAsset:self.currentAsset];
+                                 PSPTag *t = [self p_newTag:tagName forAsset:self.currentAsset];
 
                                  self.tagsByName[tagName] = t;
                                  [self.currentAsset addTagsObject:t];
@@ -281,7 +281,7 @@
         cell.textLabel.text = [self.tags allObjects][indexPath.row];
 
         if (self.tagsByName[[self.tags allObjects][indexPath.row]]) {
-            Tags *tag = self.tagsByName[[self.tags allObjects][indexPath.row]];
+            PSPTag *tag = self.tagsByName[[self.tags allObjects][indexPath.row]];
             if ([tag.tagName isEqualToString:[self.tags allObjects][indexPath.row]]) {
                 cell.backgroundColor = [UIColor lightGrayColor];
             }
@@ -301,14 +301,14 @@
     if (cellSelected) {
         cell.backgroundColor = [UIColor clearColor];
         self.cellStatusByName[tagName] = @(NO);
-        Tags *tag = self.tagsByName[tagName];
+        PSPTag *tag = self.tagsByName[tagName];
         [self.currentAsset removeTagsObject:tag];
         [self.tagsByName removeObjectForKey:tagName];
     }
     else {
         cell.backgroundColor = [UIColor lightGrayColor];
         self.cellStatusByName[tagName] = @(YES);
-        Tags *tag = [[PPPhotosManager sharedManager] emptyTagObject];
+        PSPTag *tag = [[PSPPhotosManager sharedManager] emptyTagObject];
         tag.tagName = tagName;
         tag.tagId = [[NSUUID UUID] UUIDString];
         tag.tagDisplayOrder = @(1);
